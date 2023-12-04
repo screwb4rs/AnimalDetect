@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="Resources/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="Resources/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="Resources/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="Resources/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="Resources/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="Resources/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="Resources/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="Resources/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="Resources/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="Resources/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="Resources/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="Resources/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="Resources/favicon/favicon-16x16.png">
+    <link rel="manifest" href="Resources/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+
+<body>
+<nav id="navigation">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo center">동물 분류
+          </a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+
+          </ul>
+        </div>
+      </nav>
+
+<div class="container">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>사진</span>
+            <input type="file" accept="image/*" id="capture" capture="camera"> 
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+          </div>
+        </div>
+
+        <div class="row">
+                <div class="col l4 xl4"></div>
+                <div class="picture col s12 l4 m12 xl4">
+                    <div id="PicturePreview">
+                            <img id="PredictedPicture" src="" alt="" />
+                    </div>
+                </div>
+                <div class="col l4 xl4"></div>
+              </div>
+
+<div class="row">
+        <div class="col l4 xl4">
+        </div>
+        <div class="button col s12 l4 m12 xl4">
+            <div class="PredictButton">
+            <button id="button" class="waves-effect waves-light btn-large center-align" type="submit" name="action">탐지
+                 <i class="material-icons right">send</i>
+            </button>
+            </div>
+        </div>
+        <div class="col l4 xl4">
+        </div>
+      </div>
+
+      <div class="row">
+            <div class="col l4 xl4"></div>
+            <div class="col col s12 l4 m12 xl4">
+                    <table class="centered" id="myTable">
+                            <thead>
+                              <tr>
+                                  <th>이름</th>
+                                  <th>정확도</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                          </table>
+            </div>
+            <div class="col l4 xl4"></div>
+        </div>
+</div>
+
+
+<style>
+#navigation{
+    background-color: #0063b1;
+}
+@media only screen and (max-width: 370px){
+    a.brand-logo.center {
+    font-size: 20px;
+}
+}
+#PicturePreview{
+    text-align: center;   
+}
+#PredictedPicture{
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+}
+.picture.col.m12 {
+    float: none;
+}
+.picture.col.l4 {
+    float: left;
+}
+.button.col.m12 {
+    float: none;
+}
+.button.col.l4 {
+    float: left;
+}
+.PredictButton{
+    text-align: center;
+}
+.btn, .btn-large, .btn-small{
+    background-color: #0078d7!important;
+}
+.btn:hover, .btn-large:hover, .btn-small:hover{
+    background-color: #0078d7!important;
+}
+.btn:hover, .btn-large:hover, .btn-small:hover{
+    background-color: #0078d7!important;
+}
+.btn, .btn-large, .btn-small{
+    background-color: #0078d7!important;
+}
+input.valid:not([type]), input.valid:not([type]):focus, input.valid[type=text]:not(.browser-default), input.valid[type=text]:not(.browser-default):focus, input.valid[type=password]:not(.browser-default), input.valid[type=password]:not(.browser-default):focus, input.valid[type=email]:not(.browser-default), input.valid[type=email]:not(.browser-default):focus, input.valid[type=url]:not(.browser-default), input.valid[type=url]:not(.browser-default):focus, input.valid[type=time]:not(.browser-default), input.valid[type=time]:not(.browser-default):focus, input.valid[type=date]:not(.browser-default), input.valid[type=date]:not(.browser-default):focus, input.valid[type=datetime]:not(.browser-default), input.valid[type=datetime]:not(.browser-default):focus, input.valid[type=datetime-local]:not(.browser-default), input.valid[type=datetime-local]:not(.browser-default):focus, input.valid[type=tel]:not(.browser-default), input.valid[type=tel]:not(.browser-default):focus, input.valid[type=number]:not(.browser-default), input.valid[type=number]:not(.browser-default):focus, input.valid[type=search]:not(.browser-default), input.valid[type=search]:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown{
+    border-bottom: 1px solid #0078d7!important;
+    -webkit-box-shadow: 0 1px 0 0 #0078d7!important;
+    box-shadow: 0 1px 0 0 #0078d7!important;
+}
+td{
+  text-align: center;
+}
+</style>
+
+<script src="script.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ 
+  </body>
+</html>
